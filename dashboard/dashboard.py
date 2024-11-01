@@ -53,7 +53,7 @@ def create_rfm_df(df):
     rfm_df.drop("instant", axis=1, inplace=True)
     return rfm_df
 
-all_df = pd.read_csv(r"C:\Users\hp\OneDrive\Dokumen\1BANGKIT\Proyek analisis data\dashboard\all_data.csv")
+all_df = pd.read_csv("https://raw.githubusercontent.com/yuna1i/Dashboard-Bike-Sharing/refs/heads/main/dashboard/all_data.csv")
 
 datetime_columns = ["dteday_x"]
 all_df.sort_values(by="dteday_x", inplace=True)
