@@ -6,6 +6,13 @@ from babel.numbers import format_currency
 
 sns.set(style='dark')
 
+# Define mappings for categorical conversion
+season_map = {1: 'Spring', 2: 'Summer', 3: 'Fall', 4: 'Winter'}
+holiday_map = {0: 'Non-holiday', 1: 'Holiday'}
+weekday_map = {0: 'Sunday', 1: 'Monday', 2: 'Tuesday', 3: 'Wednesday', 
+               4: 'Thursday', 5: 'Friday', 6: 'Saturday'}
+
+
 def create_daily_orders_df(df):
     daily_orders_df = df.resample(rule='D', on='dteday_x').agg({
         "instant": "nunique",
